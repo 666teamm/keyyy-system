@@ -1,0 +1,51 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "SP1RIT SOFTAIM", HidePremium = false, SaveConfig = true, ConfigFolder = "SP1RIT SOFTAIM"})
+
+OrionLib:MakeNotification({
+	Name = "Welcome to  SP1RIT SOFTAIM",
+	Content = "Hi, FUCK OFF BYFRON !!  BYFRON IS NIGGA !",
+	Image = "rbxassetid://4483345998",
+	Time = 20
+})
+
+_G.Key = "1 minutes"
+_G.KeyInput = "string"
+
+function MakeScriptHub()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/666teamm/mobile-sp1rit/main/mobile%20sp1rit"))()
+end
+
+function CorrectKeyNotification()
+    OrionLib:MakeNotification({
+        Name = "Correct key Logged in !",
+        Content = "You are Logged in key FREE DAY!",
+        Image = "rbxassetid://4483345998",
+        Time = 5
+    })
+end
+
+
+local KeyTab = Window:MakeTab({
+	Name = "Enter key",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+KeyTab:AddTextbox({
+	Name = "Enter key",
+	Default = "Enter key",
+	TextDisappear = true,
+	Callback = function(Value)
+		_G.KeyInput = Value
+	end	  
+})
+
+KeyTab:AddButton({
+	Name = "Check",
+	Callback = function()
+        if  _G.KeyInput == _G.Key then
+        MakeScriptHub()
+        CorrectKeyNotification()
+        end
+  	end    
+})
